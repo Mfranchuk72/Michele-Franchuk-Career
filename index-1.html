@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A visual view of my work history, with my current and past accomplishments in network implementation, field deployment and engineering leadership.">
+<meta property="og:title" content="Michele Franchuk Portfolio">
+<meta property="og:description" content="A visual view of my work history, with my current and past accomplishments in network implementation, field deployment and engineering leadership.">
+<title>Michele Franchuk Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --bg:#EAF3FB; --surface:#FFFFFF; --text:#24303B; --muted:#5E6B78; --rule:#E3EBF2; --link:#2366AE;
+  --accent:#3F7FC4; --accent-strong:#2A6AB0; --accent-soft:#DCEAF7; --accent-softer:#F1F7FC;
+  --before:#B7C9DA; --was:#F1F3F5; --y25:#C58A3E; --y26:#3F7FC4; --solid:#3F7FC4; --warm:#C58A3E; --warm-soft:#F7ECDD; --good:#2F8A5B;
+  --shadow:0 1px 2px rgba(30,60,90,.06),0 4px 16px rgba(30,60,90,.07);
+  --font:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1A25; --surface:#16232F; --text:#E3EAF0; --muted:#9BAAB8; --rule:#253544; --link:#8FBDEB;
+    --accent:#6FA6DE; --accent-strong:#8DB9E8; --accent-soft:#1D3348; --accent-softer:#192B3B;
+    --before:#3E5163; --was:#1C2631; --y25:#DDA75F; --y26:#6FA6DE; --solid:#2F6DAF; --warm:#DDA75F; --warm-soft:#3A2E1E; --good:#5DBB86;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1A25; --surface:#16232F; --text:#E3EAF0; --muted:#9BAAB8; --rule:#253544; --link:#8FBDEB;
+  --accent:#6FA6DE; --accent-strong:#8DB9E8; --accent-soft:#1D3348; --accent-softer:#192B3B;
+  --before:#3E5163; --was:#1C2631; --y25:#DDA75F; --y26:#6FA6DE; --solid:#2F6DAF; --warm:#DDA75F; --warm-soft:#3A2E1E; --good:#5DBB86;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.55;padding-inline:20px;padding-block:0 72px}
+.wrap{max-width:900px;margin:0 auto}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-weight:600;margin:0;text-wrap:balance}
+h1{font-size:42px;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:26px;line-height:1.2}
+h3{font-size:18px;line-height:1.3}
+p{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:14.5px}
+svg{display:block;max-width:100%}
+.ico{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* header */
+header{padding-block:52px 22px;display:grid;grid-template-columns:auto 1fr;gap:10px 22px;align-items:center}
+.mono{width:76px;height:76px;border-radius:50%;background:var(--solid);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:700;letter-spacing:.02em;grid-row:span 2}
+header .role{font-size:18.5px;color:var(--accent-strong);font-weight:600}
+header .intro{grid-column:1 / -1;margin-top:10px;max-width:64ch;font-size:18px}
+@media (max-width:560px){header{grid-template-columns:1fr}.mono{grid-row:auto;width:60px;height:60px;font-size:22px}h1{font-size:34px}}
+
+nav{display:flex;flex-wrap:wrap;gap:8px;padding-block:6px 4px}
+nav a{background:var(--surface);color:var(--text);padding:6px 14px;border-radius:999px;font-size:15px;box-shadow:var(--shadow)}
+nav a:hover{background:var(--accent-soft);text-decoration:none}
+
+/* stat tiles */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:22px}
+.stat{background:var(--surface);border-radius:14px;padding:18px;box-shadow:var(--shadow);display:grid;gap:6px;align-content:start}
+.stat .top{display:flex;align-items:center;gap:8px;color:var(--accent)}
+.stat .v{font-size:32px;font-weight:700;line-height:1;color:var(--accent-strong);font-variant-numeric:tabular-nums}
+.stat .l{font-size:14.5px;color:var(--muted);line-height:1.35}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:30px 32px 28px;margin-top:22px;scroll-margin-top:16px;display:grid;gap:18px}
+@media (max-width:600px){section{padding:22px 18px}}
+.sec-head{display:flex;gap:12px;align-items:center}
+.sec-head .badge{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--accent-strong);display:grid;place-items:center;flex:none}
+.lead{color:var(--muted);max-width:64ch}
+.sub{font-size:13.5px;font-weight:600;color:var(--muted);letter-spacing:.03em}
+
+/* timeline */
+.tl{position:relative;display:grid;gap:14px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--accent-soft);border-radius:2px}
+.tl-item{position:relative;display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:baseline}
+.tl-item::before{content:"";position:absolute;left:-26px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.tl-item.key::before{background:var(--accent)}
+.tl-item .when{font-weight:600;color:var(--accent-strong);font-size:15px}
+@media (max-width:520px){.tl-item{grid-template-columns:1fr;gap:0}}
+
+/* org chart */
+.org{display:grid;gap:0;justify-items:center}
+.org .me{background:var(--solid);color:#fff;border-radius:12px;padding:12px 22px;text-align:center;font-weight:600;box-shadow:var(--shadow)}
+.org .me span{display:block;font-weight:400;font-size:14px;opacity:.9}
+.org .stem{width:2px;height:22px;background:var(--before)}
+.org .row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;position:relative;padding-top:22px}
+.org .row::before{content:"";position:absolute;top:0;left:12.5%;right:12.5%;height:2px;background:var(--before)}
+.org .unit{position:relative;background:var(--accent-softer);border:1px solid var(--accent-soft);border-radius:12px;padding:16px;display:grid;gap:8px;align-content:start}
+.org .unit::before{content:"";position:absolute;top:-23px;left:50%;width:2px;height:22px;background:var(--before)}
+.org .unit .hd{display:flex;align-items:center;gap:8px;color:var(--accent-strong)}
+.org .unit h3{color:var(--text)}
+.org .unit p{font-size:15px;color:var(--muted)}
+.org .unit .links{font-size:14.5px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.people{display:flex;gap:4px;flex-wrap:wrap}
+.people i{width:16px;height:16px;border-radius:50%;background:var(--accent);opacity:.85;display:block}
+.people i.lead{background:var(--accent-strong);opacity:1}
+@media (max-width:760px){.org .row{grid-template-columns:1fr 1fr}.org .row::before{display:none}.org .unit::before{display:none}.org .stem{display:none}.org .me{margin-bottom:14px}.org .row{padding-top:0}}
+@media (max-width:480px){.org .row{grid-template-columns:1fr}}
+
+/* charts */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:720px){.charts{grid-template-columns:1fr}}
+figure{margin:0;display:grid;gap:8px}
+figure h3{font-size:16px}
+figcaption{font-size:14px;color:var(--muted)}
+.chart text{font-family:var(--font);font-size:11px;fill:var(--muted)}
+.chart .val{fill:var(--text);font-weight:600}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.chart .bar{fill:var(--before)}
+.chart .bar.on{fill:var(--accent)}
+.chart .bar.y25{fill:var(--y25)}
+.chart .bar.y26{fill:var(--y26)}
+.chart .bar.q{opacity:.35}
+.yoy{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:720px){.yoy{grid-template-columns:1fr 1fr}}
+.yoy-card{background:var(--surface);border-radius:10px;padding:12px 14px;display:grid;gap:6px;align-content:start}
+.yoy-card .yq{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
+.yoy-card .ypct{font-size:24px;font-weight:700;color:var(--good);line-height:1.1}
+.yoy-card.total{background:var(--accent-soft)}
+.ybar{display:grid;grid-template-columns:34px 1fr 46px;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.ybar .track{height:8px;background:var(--rule);border-radius:5px;overflow:hidden}
+.ybar .fill{height:100%;border-radius:5px}
+.ybar .fill.y25{background:var(--y25)}
+.ybar .fill.y26{background:var(--y26)}
+.ybar b{text-align:right;color:var(--text);font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:14px;height:14px;border-radius:3px;display:block}
+.chart .bar.cost{fill:var(--warm)}
+.chart .bar.cost.on{fill:var(--accent)}
+.chart .bar.dim{opacity:.55}
+.cost-head{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline}
+.cost-head .big{font-size:30px;font-weight:700;color:var(--accent-strong);line-height:1}
+.cost-head .big s{color:var(--muted);font-weight:600;text-decoration:none;font-size:24px}
+.chart .bar:hover{opacity:.8}
+.chart .marker{stroke:var(--warm);stroke-width:1.4;stroke-dasharray:3 3}
+.chart .marker-t{fill:var(--warm);font-weight:600}
+
+/* before / after */
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:720px){.ba{grid-template-columns:1fr}}
+.ba-card{background:var(--accent-softer);border-radius:12px;padding:16px;display:grid;gap:10px;align-content:start}
+.ba-card .t{font-weight:600;font-size:15.5px}
+.meter{display:grid;grid-template-columns:48px 1fr 54px;gap:8px;align-items:center;font-size:13.5px;color:var(--muted)}
+.meter .track{height:10px;background:var(--rule);border-radius:6px;overflow:hidden}
+.meter .fill{height:100%;border-radius:6px;background:var(--before)}
+.meter.after .fill{background:var(--accent)}
+.meter b{color:var(--text);text-align:right;font-variant-numeric:tabular-nums}
+.ba-card .note{font-size:13.5px;color:var(--muted)}
+.ring-wrap{display:flex;gap:14px;align-items:center}
+.ring-wrap .big{font-size:26px;font-weight:700;color:var(--accent-strong);line-height:1}
+
+/* tool cards */
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:720px){.tools{grid-template-columns:1fr}}
+.tool{border:1px solid var(--rule);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start;background:var(--surface)}
+.tool.wide{grid-column:1 / -1;background:var(--accent-softer);border-color:var(--accent-soft)}
+.tool .hd{display:flex;gap:12px;align-items:center}
+.tool .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent-strong);display:grid;place-items:center;flex:none}
+.tool .kpi{display:flex;align-items:baseline;gap:8px}
+.tool .kpi b{font-size:28px;color:var(--accent-strong);line-height:1;font-variant-numeric:tabular-nums}
+.tool .kpi span{font-size:14.5px;color:var(--muted)}
+.tool p{font-size:15.5px}
+.tool .links{font-size:14.5px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13.5px;background:var(--surface);border:1px solid var(--accent-soft);color:var(--text);border-radius:999px;padding:3px 10px}
+.chip.soft{background:var(--accent-soft);border-color:transparent}
+details{font-size:15.5px}
+details summary{cursor:pointer;color:var(--link);font-size:14.5px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+ ";font-weight:700}
+details[open] summary::before{content:"- "}
+details[open] summary{margin-bottom:6px}
+
+/* savings tiles */
+.save{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:720px){.save{grid-template-columns:1fr 1fr}}
+.save div{background:var(--surface);border-radius:10px;padding:12px;display:grid;gap:6px;align-content:start;font-size:14.5px}
+.save div .ico{color:var(--good)}
+.save div b{font-size:15px}
+
+/* hbar list */
+.hbars{display:grid;gap:8px}
+.hbar{display:grid;grid-template-columns:170px 1fr 34px;gap:10px;align-items:center;font-size:14.5px}
+.hbar .track{height:14px;border-radius:4px;background:var(--accent-softer)}
+.hbar .fill{height:100%;border-radius:4px;background:var(--accent)}
+.hbar b{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.hbar{grid-template-columns:120px 1fr 30px}}
+
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:step}
+.step{position:relative;background:var(--accent-softer);padding:14px 12px 14px 22px;display:grid;gap:4px;align-content:start;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%,14px 50%)}
+.step:first-child{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);padding-left:14px;border-radius:10px 0 0 10px}
+.step:nth-child(even){background:var(--accent-soft)}
+.step b{font-size:15px}
+.step span{font-size:13px;color:var(--muted);line-height:1.35}
+@media (max-width:760px){.flow{grid-template-columns:1fr 1fr;gap:6px}.step,.step:first-child{clip-path:none;border-radius:10px;padding-left:14px}}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.pair{grid-template-columns:1fr}}
+.card{border:1px solid var(--rule);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
+.card.tint{background:var(--accent-softer);border-color:var(--accent-soft)}
+.card.warm{background:var(--warm-soft);border-color:transparent}
+.card .links{font-size:14.5px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.card ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15.5px}
+.card li::marker{color:var(--accent)}
+.label{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+.label.warm{color:var(--warm)}
+.label.good{color:var(--good)}
+.pins{display:flex;gap:8px;flex-wrap:wrap}
+.pin{display:flex;align-items:center;gap:6px;background:var(--surface);border-radius:999px;padding:4px 12px 4px 8px;font-size:14.5px;box-shadow:var(--shadow)}
+.pin .ico{width:18px;height:18px;color:var(--accent-strong)}
+
+.accounts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.accounts.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:820px){.accounts,.accounts.four{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.accounts,.accounts.four{grid-template-columns:1fr}}
+.acct{border:1px solid var(--rule);border-radius:12px;padding:14px;display:grid;gap:6px;align-content:start;font-size:15px}
+.acct b{font-size:16px}
+
+/* chris diagram */
+.merge svg text{font-family:var(--font);font-size:12.5px;fill:var(--text)}
+.merge .src-box{fill:var(--accent-softer);stroke:var(--accent-soft)}
+.merge .line{stroke:var(--before);stroke-width:1.5;fill:none}
+.merge .out{fill:var(--solid)}
+.merge .out-t{fill:#fff;font-weight:600}
+
+footer{margin-top:26px;padding-inline:4px;font-size:14.5px;color:var(--muted);display:grid;gap:6px}
+
+/* before and after */
+.bna{display:grid;gap:10px}
+.bna-head,.bna-row{display:grid;grid-template-columns:150px 1fr 34px 1fr;gap:10px;align-items:stretch}
+.bna-head{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+.bna-head .now{color:var(--accent-strong)}
+.bna-row .area{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+.bna-row .area .ico{color:var(--accent-strong)}
+.bna-row .was{background:var(--was);border-radius:10px;padding:12px 14px;font-size:15px;color:var(--muted)}
+.bna-row .is{background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:15px;color:var(--text)}
+.bna-row .is b{color:var(--accent-strong)}
+.bna-row .go{display:grid;place-items:center;color:var(--accent)}
+.bna-row .go svg{width:22px;height:22px}
+@media (max-width:720px){
+  .bna-head{display:none}
+  .bna-row{grid-template-columns:1fr;gap:6px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+  .bna-row:last-child{border-bottom:0}
+  .bna-row .go{display:none}
+  .bna-row .was::before{content:"Before: ";font-weight:600}
+  .bna-row .is::before{content:"Now: ";font-weight:600}
+}
+.lad{display:grid;gap:7px}
+.lad-row{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;font-size:14.5px}
+.lad-track{position:relative;height:14px;background:var(--accent-softer);border-radius:4px}
+.lad-bar{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--warm)}
+.lad-bar.s{background:var(--accent)}
+.lad-axis{display:grid;grid-template-columns:230px 1fr;gap:12px}
+.lad-axis div{position:relative;height:16px;font-size:12px;color:var(--muted)}
+.lad-axis span{position:absolute;transform:translateX(-50%)}
+@media (max-width:600px){.lad-row,.lad-axis{grid-template-columns:1fr}.lad-row{gap:3px}.lad-axis>i{display:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="mono" aria-hidden="true">MF</div>
+  <h1>Michele Franchuk</h1>
+  <div class="role">Sr. Director, Network Implementation, Scale Computing</div>
+  <p class="intro">I lead network implementation and field deployment for large multi-site customer programs across retail, restaurant, convenience store and enterprise locations. My teams cover deployments, scheduling, and vendor management and installation pricing. Here is what I have built and changed along the way.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#lead">How I lead</a><a href="#value">Before and now</a><a href="#journey">Timeline</a><a href="#career">Career</a><a href="#scope">What I own</a><a href="#results">Results</a><a href="#tools">Tools</a><a href="#process">Process</a><a href="#programs">Programs</a><a href="#team">Team</a>
+</nav>
+
+<div class="stats">
+  <div class="stat"><div class="top"><svg class="ico" viewBox="0 0 24 24"><path d="M4 18l6-6 4 4 6-8"/><path d="M15 8h5v5"/></svg></div><div class="v">+55%</div><div class="l">quarterly installs, first to last quarter of my first full year</div></div>
+  <div class="stat"><div class="top"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M16 7H10a3 3 0 000 6h4a3 3 0 010 6H8"/></svg></div><div class="v">54%</div><div class="l">less install overspend, year over year</div></div>
+  <div class="stat"><div class="top"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div class="v">70</div><div class="l">customer and field forms built by my team</div></div>
+  <div class="stat"><div class="top"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20h4v-5h4v-5h4V5h4"/></svg></div><div class="v">6</div><div class="l">promotions in under 10 years before joining Scale</div></div>
+</div>
+
+<!-- HOW I LEAD -->
+<section id="lead" aria-labelledby="lead-h">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/></svg></div><h2 id="lead-h">How I lead</h2></div>
+  <p class="lead">I always know what is going on with my teams, at a high level and in detail. When anyone asks me a question, I have the answer, because the data behind it is already set up and current.</p>
+  <div class="ba">
+    <div class="ba-card"><div class="t">The big picture</div><div class="note">A weekly KPI dashboard, quarterly install trends and a weekly executive update</div></div>
+    <div class="ba-card"><div class="t">The detail</div><div class="note">A per-technician weekly report, scheduling dashboards, and a task board for every lead</div></div>
+    <div class="ba-card"><div class="t">The answer, ready</div><div class="note">Staffing backed by a headcount model, and every vendor invoice tracked against its quote</div></div>
+  </div>
+</section>
+
+<!-- BEFORE AND AFTER -->
+<section id="value">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 5v14"/></svg></div><h2>Before I started, and now</h2></div>
+  <p class="lead">What each part of the work looked like when I joined in October 2024, compared with today.</p>
+  <div class="bna">
+    <div class="bna-head"><div></div><div>BEFORE</div><div></div><div class="now">NOW</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M4 18l6-6 4 4 6-8"/></svg>Install volume</div><div class="was">Falling every quarter</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>Rose every quarter</b> of my first full year, up 55% from first to last quarter</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Project intake</div><div class="was">No standard starting point for install projects</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>11-step checklist</b> used on dozens of customer projects</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Scheduling</div><div class="was">No dedicated team, queue or dashboards</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>A dedicated team</b> with its own mailbox, phone queue and dashboards</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><path d="M16 15l2 2 4-4"/></svg>Ticket assignment</div><div class="was">Hundreds of tickets sorted by hand</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>Assigned automatically</b> in rotation and written back to Jira</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><rect x="16" y="16" width="5" height="5" rx="1"/></svg>Staffing decisions</div><div class="was">Manual copy and paste of install data</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>Hour by hour model</b> of installs vs. technicians, synced automatically</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>Install pricing</div><div class="was">Quotes built by hand, with no standard prices</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>10 standard SKUs</b> and a quote tool that produces a consistent PDF</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M16 7H10a3 3 0 000 6h4a3 3 0 010 6H8"/></svg>Vendor cost vs. quote</div><div class="was">Not tracked; 46% over quote in the first quarter I measured</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>11% over quote</b> in the latest quarter, with every invoice tracked</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>QA</div><div class="was">Tickets could close without review</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>Lead review</b> before close; captioned install photos up from 82% to 97%</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12h4l3 7 4-14 3 7h4"/></svg>Weekly reporting</div><div class="was">Built by hand every week</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>About 95% cheaper</b> to produce, automated across six systems</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Canada break-fix</div><div class="was">Spares in only two locations; one site had eight missed dates</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>New vendor and spares in three cities</b>, with a 30-minute response</div></div>
+    <div class="bna-row"><div class="area"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5h11l5 5v9H4z"/><path d="M15 5v5h5"/></svg>Documentation</div><div class="was">Few written processes for installs or scheduling</div><div class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="is"><b>68 process pages</b> I wrote, plus nine training modules</div></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="journey">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><h2>Two years at a glance</h2></div>
+  <div class="tl">
+    <div class="tl-item key"><div class="when">Oct 2024</div><div>Joined Acumera (now Scale Computing) to lead network installation</div></div>
+    <div class="tl-item key"><div class="when">Nov 2024</div><div>Took full ownership of the installation team 20 days into the role, and wrote the project types and workflows each install follows</div></div>
+    <div class="tl-item"><div class="when">Nov 2024 to Apr 2025</div><div>Went on customer pilot installs across restaurant, retail and service brands in my first six months, to learn the business and see the install experience first hand</div></div>
+    <div class="tl-item"><div class="when">Dec 2024</div><div>Ran expedited service RFPs with three vendors for a 600-site restaurant chain, and started a cost review and spares recovery for a Canadian customer</div></div>
+    <div class="tl-item"><div class="when">Jan 2025</div><div>Started tracking installs across our scheduling, ticketing and monitoring systems, and began tracking vendor cost against quote</div></div>
+    <div class="tl-item"><div class="when">Feb 2025</div><div>Launched a standard project checklist, now used on dozens of customer projects</div></div>
+    <div class="tl-item"><div class="when">Mar 2025</div><div>Began moving install forms to JotForm, starting with a c-store installation guide</div></div>
+    <div class="tl-item"><div class="when">Apr 2025</div><div>Led a four-site pilot for a quick-service chain and turned the findings into the final install guide and field form</div></div>
+    <div class="tl-item"><div class="when">Jun 2025</div><div>Built the site survey form so field teams capture site details the same way every time</div></div>
+    <div class="tl-item"><div class="when">Jul 2025</div><div>Added a QA review step before any install ticket can close</div></div>
+    <div class="tl-item"><div class="when">Aug 2025</div><div>Set up Scheduling as its own function, with its own space and processes</div></div>
+    <div class="tl-item key"><div class="when">Dec 2025</div><div>Closed my first full year with install volume up every quarter</div></div>
+    <div class="tl-item"><div class="when">Mar 2026</div><div>Built a deployment headcount model to back staffing decisions with data</div></div>
+    <div class="tl-item"><div class="when">May 2026</div><div>Automated ticket assignment for the schedulers and launched a team task manager</div></div>
+    <div class="tl-item"><div class="when">Jun 2026</div><div>Put a formal Sales to Deployment handoff in place</div></div>
+    <div class="tl-item"><div class="when">Jul 2026</div><div>Automated weekly reporting went live across six systems, cutting its cost by about 95%</div></div>
+    <div class="tl-item"><div class="when">Aug 2026</div><div>Led a major customer escalation to a fix and launched platform install training</div></div>
+    <div class="tl-item key"><div class="when">Sep 2026</div><div>Launched a field installation quote calculator, built on standard install SKUs</div></div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career" aria-labelledby="career-h">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20h4v-5h4v-5h4V5h4"/></svg></div><h2 id="career-h">Before Scale</h2></div>
+  <p class="lead">Before IT, I worked in retail management, so I know the stores our customers run from the inside. I then spent 12 years at Spectrum Enterprise (Charter Communications), starting in the TAC working with field technicians on installs and moving up to Director of Network Engineering. That path from the store floor to the field to engineering to leading developers is why I build tools and processes the way I do here.</p>
+  <div class="ba">
+    <div class="ba-card"><div class="t">Retail management</div><div class="note">The same world our customers work in</div></div>
+    <div class="ba-card"><div class="t">Spectrum Enterprise</div><div class="note">From TAC specialist to Director of Network Engineering</div></div>
+    <div class="ba-card"><div class="t">Scale Computing</div><div class="note">Leading network implementation</div></div>
+  </div>
+  <div class="legend" aria-hidden="true"><span><i style="background:var(--warm)"></i>Spectrum Enterprise</span><span><i style="background:var(--accent)"></i>Scale Computing</span></div>
+  <div class="lad" role="img" aria-label="Career path after retail management: Network Specialist May 2012, Network Engineer I 2014, II 2015, III 2017, IV 2017, Senior Manager 2018, Director 2021 to May 2024, Sr. Director at Scale Computing October 2024 to now">
+      <div class="lad-row"><span class="lad-n">Network Specialist, TAC</span><div class="lad-track"><i class="lad-bar c" style="left:2.3%;width:12.4%" title="May 2012 to Mar 2014"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Network Engineer I</span><div class="lad-track"><i class="lad-bar c" style="left:14.7%;width:9.0%" title="Mar 2014 to Jul 2015"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Network Engineer II</span><div class="lad-track"><i class="lad-bar c" style="left:23.7%;width:11.3%" title="Jul 2015 to Mar 2017"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Network Engineer III</span><div class="lad-track"><i class="lad-bar c" style="left:35.0%;width:2.3%" title="Mar 2017 to Jul 2017"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Network Engineer IV</span><div class="lad-track"><i class="lad-bar c" style="left:37.3%;width:3.4%" title="Jul 2017 to Jan 2018"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Senior Manager, Network Engineering</span><div class="lad-track"><i class="lad-bar c" style="left:40.7%;width:26.6%" title="Jan 2018 to Dec 2021"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Director, Network Engineering</span><div class="lad-track"><i class="lad-bar c" style="left:67.2%;width:16.4%" title="Dec 2021 to May 2024"></i></div></div>
+      <div class="lad-row"><span class="lad-n">Sr. Director, Network Implementation</span><div class="lad-track"><i class="lad-bar s" style="left:86.4%;width:13.0%" title="Oct 2024 to now"></i></div></div>
+    <div class="lad-axis"><i></i><div><span style="left:0.0%">2012</span><span style="left:13.6%">2014</span><span style="left:27.1%">2016</span><span style="left:40.7%">2018</span><span style="left:54.2%">2020</span><span style="left:67.8%">2022</span><span style="left:81.4%">2024</span><span style="left:94.9%">2026</span></div></div>
+  </div>
+  <div class="cost-head"><div class="big" style="font-size:24px">6 promotions in under 10 years</div><div class="small muted">From TAC specialist to Director of Network Engineering</div></div>
+  <div class="sub">AS DIRECTOR OF NETWORK ENGINEERING, 2021 TO 2024</div>
+  <div class="stats" style="padding-top:0">
+    <div class="stat"><div class="v">65 to 70</div><div class="l">managers, engineers and developers in my organization</div></div>
+    <div class="stat"><div class="v">12</div><div class="l">data centers, plus 975 colocation sites</div></div>
+    <div class="stat"><div class="v">1,972</div><div class="l">network hubs</div></div>
+    <div class="stat"><div class="v">65,000</div><div class="l">core network devices</div></div>
+  </div>
+  <div class="pair">
+    <div class="card tint">
+      <div class="label">WHAT I LED</div>
+      <ul>
+        <li>A security fix across all 65,000 core devices, over 95% done in six months</li>
+        <li>A full-stack development team for internal tools, with agile, CI/CD and Kubernetes</li>
+        <li>An AWS-hosted material workflow tool for forecasting and chain of custody, adopted across the organization</li>
+        <li>The 100G Everywhere core capacity upgrade, plus SD-WAN and R-Phy rollouts</li>
+        <li>Consolidation of major New York City hubs serving more than 2,000 customers each</li>
+        <li>The GIA-VoIP core network that carries 911 and other critical services</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">EDUCATION AND CERTIFICATIONS</div>
+      <ul>
+        <li>B.S., Information Technology, Western Governors University</li>
+        <li>Associate degree, Business Administration and Computer Science, American InterContinental University</li>
+      </ul>
+      <div class="chips"><span class="chip">CompTIA A+</span><span class="chip">CompTIA Project+</span><span class="chip">MEF-CECP</span><span class="chip">Cisco CCNA and CCNP, refreshing</span></div>
+      <div class="label" style="margin-top:4px">MEMBERSHIPS</div>
+      <div class="chips"><span class="chip soft">WICT</span><span class="chip soft">PMI, Austin chapter</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SCOPE -->
+<section id="scope">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="12" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 8.5v7M12 12H5v3.5M12 12h7v3.5"/></svg></div><h2>What I own</h2></div>
+  <div class="org">
+    <div class="me">Michele Franchuk<span>Sr. Director, Network Implementation</span></div>
+    <div class="stem"></div>
+    <div class="row">
+      <div class="unit">
+        <div class="hd"><svg class="ico" viewBox="0 0 24 24"><path d="M14 7l3-3 3 3-3 3"/><path d="M17 4v6"/><path d="M4 20l7-7"/><path d="M9 11l4 4"/></svg><h3>Deployments</h3></div>
+        <p>Deployment technicians, led through a Deployment Manager.</p>
+      </div>
+      <div class="unit">
+        <div class="hd"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><h3>Scheduling</h3></div>
+        <p>A manager, leads and coordinators who book every install.</p>
+      </div>
+      <div class="unit">
+        <div class="hd"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 4-4 6 5"/><path d="M3 12l6 6 3-2 3 2 6-6"/></svg><h3>Vendors and pricing</h3></div>
+        <p>Every install vendor, contract, SOW, invoice approval and our standard install prices.</p>
+      </div>
+      <div class="unit">
+        <div class="hd"><svg class="ico" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><h3>Data and reporting</h3></div>
+        <p>Building tools that cost less than SaaS, plus data and reporting for my teams, set up to expand to any team in the company.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h2>Results</h2></div>
+  <p class="lead">Install volume was falling every quarter before I started. In my first full year, it rose every quarter.</p>
+  <div class="charts">
+    <figure class="chart">
+      <h3>Installs per quarter, shape of the trend</h3>
+      <svg id="c1" viewBox="0 0 440 220" role="img" aria-label="Installs fell each quarter of the year before I started, then rose each quarter of my first full year, up 55% from first to last quarter."></svg>
+      <figcaption>Gray is the year before I started, blue is my first full year. The dashed line is my start date.</figcaption>
+    </figure>
+    <figure class="chart" style="align-content:start">
+      <h3>First full year installs by segment</h3>
+      <div class="hbars" role="img" aria-label="Installs by segment: c-store 47%, restaurant 38%, retail 15%" style="margin-top:14px">
+        <div class="hbar"><span>C-store</span><div class="track"><div class="fill" style="width:100%"></div></div><b>47%</b></div>
+        <div class="hbar"><span>Restaurant</span><div class="track"><div class="fill" style="width:81%"></div></div><b>38%</b></div>
+        <div class="hbar"><span>Retail</span><div class="track"><div class="fill" style="width:32%"></div></div><b>15%</b></div>
+      </div>
+    </figure>
+  </div>
+  <figure class="chart ba-card" style="gap:10px">
+    <h3>Installation cost against quote</h3>
+    <div class="cost-head"><div class="big"><s>46%</s> to 11%</div><div class="small muted">Actual vendor cost above what we quoted, from the first quarter of tracking to the latest.</div></div>
+    <div class="sub" style="margin-top:6px">OVERSPEND BY QUARTER, YEAR OVER YEAR</div>
+    <div class="hbars" role="img" aria-label="Overspend reduction year over year: Q1 52% less, Q2 67% less, Q3 39% less">
+      <div class="hbar"><span>Q1</span><div class="track"><div class="fill" style="width:78%;background:var(--good)"></div></div><b>52%</b></div>
+      <div class="hbar"><span>Q2</span><div class="track"><div class="fill" style="width:100%;background:var(--good)"></div></div><b>67%</b></div>
+      <div class="hbar"><span>Q3</span><div class="track"><div class="fill" style="width:58%;background:var(--good)"></div></div><b>39%</b></div>
+    </div>
+    <figcaption>Percent less overspend than the same quarter a year earlier; 54% less across all three quarters. Tracking starts in January 2025 because vendor cost against quote was not tracked before I set it up.</figcaption>
+  </figure>
+  <div class="ba">
+    <div class="ba-card">
+      <div class="t">Install photos captioned for QA</div>
+      <div class="meter"><span>Before</span><div class="track"><div class="fill" style="width:82.1%"></div></div><b>82%</b></div>
+      <div class="meter after"><span>After</span><div class="track"><div class="fill" style="width:97%"></div></div><b>97%</b></div>
+    </div>
+    <div class="ba-card">
+      <div class="t">New installs picked up in the team channel</div>
+      <div class="meter"><span>Before</span><div class="track"><div class="fill" style="width:58.3%"></div></div><b>58%</b></div>
+      <div class="meter after"><span>After</span><div class="track"><div class="fill" style="width:85.7%"></div></div><b>86%</b></div>
+    </div>
+    <div class="ba-card">
+      <div class="t">Sites installed in a 900+ site c-store program</div>
+      <div class="ring-wrap">
+        <svg width="72" height="72" viewBox="0 0 72 72" role="img" aria-label="Over 99% of sites installed">
+          <circle cx="36" cy="36" r="29" fill="none" stroke="var(--rule)" stroke-width="9"/>
+          <circle cx="36" cy="36" r="29" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-dasharray="182.2 182.2" stroke-dashoffset="0.4" transform="rotate(-90 36 36)"/>
+        </svg>
+        <div><div class="big">99%+</div><div class="note">of sites complete</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div><h2>Tools</h2></div>
+  <p class="lead">Mostly Google Apps Script, connected to Jira, scheduling and monitoring systems and Google Calendar, and documented so the team can run them without me.</p>
+  <div class="tools">
+    <div class="tool wide">
+      <div class="hd"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg></div><div><h3>Field Installation Quote Calculator</h3><div class="small muted">2026, new</div></div></div>
+      <p>There was no standard way to price field installation before this. Using install data collected since I started, we set ten standard SKUs for every billable part of a site visit, and I built a web app that turns them into a consistent PDF quote.</p>
+      <div class="chips" aria-label="Standard install SKUs">
+        <span class="chip">Site survey</span><span class="chip">Dispatch fee</span><span class="chip">Device install</span><span class="chip">Additional labor</span><span class="chip">Rack mounting</span><span class="chip">Cabling runs</span><span class="chip">Outdoor mount</span><span class="chip">Predictive heat map</span><span class="chip">Heat map testing</span>
+      </div>
+      <div class="sub">WHERE IT SAVES MONEY</div>
+      <div class="save">
+        <div><svg class="ico" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1015-6.7"/><path d="M18 3v4h-4"/></svg><b>Revisits are billed</b>Every return trip carries a dispatch fee.</div>
+        <div><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h10a3 3 0 010 6H8a3 3 0 000 6h12"/></svg><b>Cabling is quoted</b>Runs and mounts are their own lines.</div>
+        <div><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h0"/></svg><b>Discounts explained</b>Each one needs a written reason.</div>
+        <div><svg class="ico" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0120 0M5 12.5a10 10 0 0114 0M8.5 16a5 5 0 017 0"/><circle cx="12" cy="19" r="1"/></svg><b>Wi-Fi planned first</b>Heat maps sold before install.</div>
+      </div>
+    </div>
+    <div class="tool">
+      <div class="hd"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="9.5" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><rect x="16" y="16" width="5" height="5" rx="1"/></svg></div><div><h3>Deployment Headcount Model</h3><div class="small muted">2026</div></div></div>
+      <div class="kpi"><b>v17</b><span>hour by hour installs vs. technicians available</span></div>
+      <p>Pulls from ticketing, monitoring, the tech schedule and the PTO calendar. Replaced a manual copy and paste process, and backs every staffing request I make.</p>
+    </div>
+    <div class="tool">
+      <div class="hd"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><path d="M16 15l2 2 4-4"/></svg></div><div><h3>Ticket Management Tool</h3><div class="small muted">2026</div></div></div>
+      <div class="kpi"><b>1,000+</b><span>tickets assigned automatically</span></div>
+      <p>Cleans up company names, assigns tickets to schedulers in rotation, writes it back to Jira, and flags sites that are already installed.</p>
+    </div>
+    <div class="tool">
+      <div class="hd"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><h3>JotForm library</h3><div class="small muted">2025 and 2026, built by my team</div></div></div>
+      <div class="kpi"><b>70</b><span>forms, each feeding the CRM, Drive and email</span></div>
+      <div class="hbars" role="img" aria-label="Forms by type: 26 field forms, 18 customer order forms, 10 operations forms, 3 billing forms, 13 earlier versions">
+        <div class="hbar"><span>Field surveys and checklists</span><div class="track"><div class="fill" style="width:100%"></div></div><b>26</b></div>
+        <div class="hbar"><span>Customer order forms</span><div class="track"><div class="fill" style="width:69%"></div></div><b>18</b></div>
+        <div class="hbar"><span>Operations</span><div class="track"><div class="fill" style="width:38%"></div></div><b>10</b></div>
+        <div class="hbar"><span>Billing</span><div class="track"><div class="fill" style="width:12%"></div></div><b>3</b></div>
+        <div class="hbar"><span>Earlier versions</span><div class="track"><div class="fill" style="width:50%;opacity:.45"></div></div><b>13</b></div>
+      </div>
+    </div>
+    <div class="tool">
+      <div class="hd"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="9.5" y="4" width="5" height="11" rx="1"/><rect x="16" y="4" width="5" height="7" rx="1"/></svg></div><div><h3>Task Manager</h3><div class="small muted">2026</div></div></div>
+      <div class="ring-wrap">
+        <svg width="64" height="64" viewBox="0 0 72 72" role="img" aria-label="86% of tasks complete">
+          <circle cx="36" cy="36" r="29" fill="none" stroke="var(--rule)" stroke-width="9"/>
+          <circle cx="36" cy="36" r="29" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-dasharray="156.7 182.2" transform="rotate(-90 36 36)"/>
+        </svg>
+        <div><div class="big">86%</div><div class="note">of tracked tasks complete</div></div>
+      </div>
+      <p>A task board with overdue reminders that my leads use for their work and the weekly executive update.</p>
+    </div>
+    <div class="tool" style="grid-column:1 / -1">
+      <div class="hd"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg></div><div><h3>Smaller tools</h3><div class="small muted">2025 and 2026</div></div></div>
+      <div class="chips"><span class="chip soft">Deployment scheduler script</span><span class="chip soft">Scheduling data import</span><span class="chip soft">Interview scorecards</span></div>
+      <p>PTO and double-booking checks for the schedule, a year of appointments pulled into the KPI workbook, and structured interview forms that log every candidate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/></svg></div><h2>How an install moves now</h2></div>
+  <p class="lead">Every step below has a written process and an owner, so it runs the same way no matter who picks it up.</p>
+  <div class="flow">
+    <div class="step"><b>Handoff</b><span>Sales hands over with 2 weeks' notice and a checklist</span></div>
+    <div class="step"><b>Readiness</b><span>Engineering review and site readiness check</span></div>
+    <div class="step"><b>Schedule</b><span>Scheduling team books the visit</span></div>
+    <div class="step"><b>Install</b><span>Techs and vendors use field forms on site</span></div>
+    <div class="step"><b>QA</b><span>A lead reviews the ticket before it closes</span></div>
+    <div class="step"><b>Close</b><span>Billing triggers at the right moment</span></div>
+  </div>
+  <div class="pair">
+    <div class="card tint">
+      <div class="label">STANDARDS</div>
+      <ul>
+        <li>An 11-step project checklist, picked up by Network Engineering, the PMO and Solutions Architecture</li>
+        <li>A roles page that spells out what Scheduling, Deployments and Support each own</li>
+        <li>Nine training modules covering every platform we install</li>
+      </ul>
+    </div>
+    <div class="card warm">
+      <div class="label warm">FOUND AND FIXED</div>
+      <ul>
+        <li>Jobs that started billing too early, and orders that never billed at all</li>
+        <li>Tickets closing without review, fixed with a QA step and a weekly QA rotation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div><h2>Customer programs</h2></div>
+  <div class="pair">
+    <div class="card warm">
+      <div class="label warm">CANADIAN BREAK-FIX, BEFORE</div>
+      <ul>
+        <li>One site had eight target dates and no install</li>
+        <li>Spares stocked in only two locations</li>
+        <li>Vendors coordinated one at a time, with no service levels</li>
+      </ul>
+    </div>
+    <div class="card tint">
+      <div class="label good">CANADIAN BREAK-FIX, AFTER</div>
+      <div class="pins">
+        <span class="pin"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Toronto</span>
+        <span class="pin"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Vancouver</span>
+        <span class="pin"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Calgary</span>
+      </div>
+      <ul>
+        <li>Changed vendors and expanded spares to three cities</li>
+        <li>About 180 sites on a 30-minute response</li>
+        <li>The delayed site is installed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="accounts">
+    <div class="acct"><b>C-store program</b><span>900+ sites, over 99% complete. Found that these installs run about 5 hours vs. 3 for other c-stores.</span></div>
+    <div class="acct"><b>Restaurant program</b><span>Priced and packaged the program: an install quote plus four monthly service tiers.</span></div>
+    <div class="acct"><b>Quick-service chain</b><span>Ran vendor quotes for 54 stores and caught a pricing gap before it became a loss.</span></div>
+    <div class="acct"><b>Grocery RFQ</b><span>Budgetary RFQ for hardware, install and disposal across more than 2,000 sites.</span></div>
+    <div class="acct"><b>Vendor cost tracking</b><span>Every invoice tracked against the quote, which showed unscoped cabling as the biggest overrun.</span></div>
+    <div class="acct"><b>Pilot to scale</b><span>Pilots first, then field feedback folded into the install guide before broad rollout.</span></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="sec-head"><div class="badge"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0121 19"/></svg></div><h2>Team</h2></div>
+  <div class="card tint">
+    <div class="label">HIRED AND DEVELOPED</div>
+    <h3>A data and reporting lead</h3>
+    <p>I hired a data engineer to connect data that lived in separate systems. The weekly report now pulls six sources into one view for technician 1:1s, at about 5% of the old cost. He is now moving up to a director role.</p>
+    <div class="merge">
+      <svg viewBox="0 0 640 210" role="img" aria-label="Six sources, Jira, scheduling, Gmail, phone, monitoring and Slack, feed one weekly report">
+        <g id="srcs"></g>
+        <rect class="out" x="440" y="75" width="190" height="60" rx="12"/>
+        <text class="out-t" x="535" y="101" text-anchor="middle">Weekly deployments</text>
+        <text class="out-t" x="535" y="119" text-anchor="middle">report</text>
+      </svg>
+    </div>
+  </div>
+  <div class="accounts">
+    <div class="acct"><b>Career levels</b><span>Three technician tiers and Team Lead, with targets for accuracy, utilization and defects.</span></div>
+    <div class="acct"><b>Hiring</b><span>Job descriptions and two-round interview guides for four roles.</span></div>
+    <div class="acct"><b>Certification bonus</b><span>A bonus program that rewards technicians for earning certifications.</span></div>
+  </div>
+</section>
+
+<footer>
+  <span>Customer names, internal systems and financial details are left out or summarized to protect confidentiality.</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  function bars(id, data, opts){
+    var svg=document.getElementById(id); if(!svg) return;
+    var W=opts.W||440,L=40,R=8,T=22,ph=opts.ph||158, pw=W-L-R; var fmt=opts.fmt||function(v){return v.toLocaleString()}, tf=opts.tf||function(v){return v.toLocaleString()};
+    var max=opts.max, out=[];
+    opts.ticks.forEach(function(t){
+      var y=T+ph-(t/max)*ph;
+      out.push('<line class="grid" x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'"/>');
+      out.push('<text x="'+(L-6)+'" y="'+(y+3.5)+'" text-anchor="end">'+tf(t)+'</text>');
+    });
+    var n=data.length, slot=pw/n, bw=slot*0.56;
+    data.forEach(function(d,i){
+      var x=L+i*slot+(slot-bw)/2, h=(d.v/max)*ph, y=T+ph-h;
+      out.push('<rect class="bar '+(d.cls||'')+'" x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+h.toFixed(1)+'" rx="3"><title>'+(d.t||d.l)+': '+(d.tip||fmt(d.v))+'</title></rect>');
+      out.push('<text class="val" x="'+(x+bw/2).toFixed(1)+'" y="'+(y-5).toFixed(1)+'" text-anchor="middle">'+fmt(d.v)+'</text>');
+      out.push('<text x="'+(x+bw/2).toFixed(1)+'" y="'+(T+ph+15)+'" text-anchor="middle">'+d.l+'</text>');
+      if(d.g) out.push('<text x="'+(x+bw/2).toFixed(1)+'" y="'+(T+ph+29)+'" text-anchor="middle">'+d.g+'</text>');
+    });
+    if(opts.marker!=null){
+      var mx=L+opts.marker*slot;
+      out.push('<line class="marker" x1="'+mx+'" x2="'+mx+'" y1="'+(T-8)+'" y2="'+(T+ph)+'"/>');
+      out.push('<text class="marker-t" x="'+(mx+4)+'" y="'+(T-10)+'">Started Oct 2024</text>');
+    }
+    svg.innerHTML=out.join('');
+  }
+  var nf=function(){return ''};
+  bars('c1',[
+    {l:'Q1',v:139,g:'Year before',t:'Before, Q1',tip:' '},{l:'Q2',v:133,t:'Before, Q2',tip:' '},{l:'Q3',v:121,t:'Before, Q3',tip:' '},{l:'Q4',v:120,t:'Before, Q4',tip:' '},
+    {l:'Q1',v:100,cls:'on',g:'First full year',t:'First year, Q1',tip:' '},{l:'Q2',v:130,cls:'on',t:'First year, Q2',tip:' '},{l:'Q3',v:147,cls:'on',t:'First year, Q3',tip:' '},{l:'Q4',v:155,cls:'on',t:'First year, Q4',tip:' '}
+  ],{max:170,ticks:[],fmt:nf,marker:3.27});
+  var g=document.getElementById('srcs'); if(g){
+    var names=['Jira','Scheduling','Gmail','Phone','Monitoring','Slack'], out=[];
+    names.forEach(function(n,i){
+      var y=8+i*33, cy=y+13;
+      out.push('<rect class="src-box" x="10" y="'+y+'" width="130" height="26" rx="13"/>');
+      out.push('<text x="75" y="'+(cy+4)+'" text-anchor="middle">'+n+'</text>');
+      out.push('<path class="line" d="M140 '+cy+' C 300 '+cy+', 300 105, 440 105"/>');
+    });
+    g.innerHTML=out.join('');
+  }
+})();
+</script>
+</body>
+</html>
